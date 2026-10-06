@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { X, ExternalLink, CheckCircle2, Award, Wrench, Layers } from "lucide-react";
+import { X, ExternalLink, CheckCircle2, Award, Wrench, Layers, FileText } from "lucide-react";
 import { Project } from "@/data/portfolio";
 
 interface CaseStudyModalProps {
@@ -308,18 +308,33 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <span>Build Something Similar</span>
             </button>
 
-            {project.externalUrl && (
-              <a
-                href={project.externalUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-                style={{ gap: "6px" }}
-              >
-                <span>Live Preview</span>
-                <ExternalLink size={15} />
-              </a>
-            )}
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              {project.pdfUrl && (
+                <a
+                  href={project.pdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ gap: "6px", backgroundColor: "#EEF2FF", color: "#4F46E5", borderColor: "#C7D2FE" }}
+                >
+                  <FileText size={16} />
+                  <span>View Brand Guide (PDF)</span>
+                </a>
+              )}
+
+              {project.externalUrl && (
+                <a
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ gap: "6px" }}
+                >
+                  <span>Live Preview</span>
+                  <ExternalLink size={15} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

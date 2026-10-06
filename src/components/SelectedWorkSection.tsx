@@ -11,6 +11,20 @@ interface SelectedWorkSectionProps {
 export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
   onSelectProject,
 }) => {
+  const [activeCategory, setActiveCategory] = React.useState<string>("All");
+
+  const categories = [
+    "All",
+    "Brand & Logo Design",
+    "Mobile App UI & UX",
+    "Graphic & UI Design",
+  ];
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
+
   return (
     <section
       id="projects"
@@ -37,7 +51,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
               boxShadow: "0 2px 8px rgba(0, 0, 0, 0.03)",
             }}
           >
-            Projects
+            Portfolio & Case Studies
           </div>
         </div>
 
@@ -51,11 +65,51 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
             lineHeight: 1.12,
             textAlign: "center",
             color: "#12151B",
-            marginBottom: "52px",
+            marginBottom: "32px",
           }}
         >
-          Selected Work
+          Featured Work & Brand Guides
         </h2>
+
+        {/* Category Filter Tabs */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            flexWrap: "wrap",
+            marginBottom: "48px",
+          }}
+        >
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                style={{
+                  padding: "10px 22px",
+                  borderRadius: "9999px",
+                  fontSize: "0.9rem",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+                  border: isActive
+                    ? "1px solid var(--accent-blue-deep)"
+                    : "1px solid var(--border-subtle)",
+                  backgroundColor: isActive ? "#2563EB" : "#FFFFFF",
+                  color: isActive ? "#FFFFFF" : "var(--text-secondary)",
+                  boxShadow: isActive
+                    ? "0 4px 14px rgba(37, 99, 235, 0.25)"
+                    : "0 2px 6px rgba(0, 0, 0, 0.02)",
+                }}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
 
         {/* 2-Column Projects Grid */}
         <div
@@ -68,7 +122,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
           }}
           className="selected-work-grid"
         >
-          {projects.map((project) => {
+          {filteredProjects.map((project) => {
             const shortTitle = project.shortTitle || project.title.split(" ")[0];
             const duration = project.duration || "4 Weeks";
 
