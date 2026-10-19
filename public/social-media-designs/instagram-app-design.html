@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post - Website App Design</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .instagram-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .grid-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+        }
+        .accent-box {
+            position: absolute;
+            border: 3px solid #00d4ff;
+            border-radius: 20px;
+            opacity: 0.3;
+        }
+        .box-1 {
+            width: 300px;
+            height: 300px;
+            top: 50px;
+            right: 50px;
+        }
+        .box-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            left: 50px;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+        .category {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            text-transform: uppercase;
+        }
+        .main-text {
+            font-size: 88px;
+            font-weight: 900;
+            margin: 20px 0;
+            line-height: 0.95;
+        }
+        .description {
+            font-size: 32px;
+            font-weight: 300;
+            margin-top: 30px;
+            max-width: 600px;
+        }
+        .feature-list {
+            display: flex;
+            gap: 60px;
+            margin-top: 50px;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instagram-post">
+        <div class="grid-background"></div>
+        <div class="accent-box box-1"></div>
+        <div class="accent-box box-2"></div>
+        <div class="content">
+            <div class="category">Web + App Design</div>
+            <div class="main-text">DESIGN FOR<br>IMPACT</div>
+            <div class="description">
+                Beautiful interfaces that<br>users love to interact with
+            </div>
+            <div class="feature-list">
+                <div class="feature">
+                    <div class="feature-icon">💻</div>
+                    <div>Web Design</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div>App Design</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div>UX First</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

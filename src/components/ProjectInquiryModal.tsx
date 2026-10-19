@@ -16,8 +16,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
   onClose,
   profile,
 }) => {
-  const [projectTypes, setProjectTypes] = useState<string[]>(["Mobile App"]);
-  const [budget, setBudget] = useState("$10k - $25k");
+  const [projectTypes, setProjectTypes] = useState<string[]>(["Branding"]);
   const [timeline, setTimeline] = useState("1 - 2 Months");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,15 +24,12 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
   const [submitted, setSubmitted] = useState(false);
 
   const availableTypes = [
-    "Mobile App (iOS/Android)",
-    "Web Application",
-    "Design System",
-    "Full Brand & UI/UX",
-    "SaaS Dashboard",
-    "Interactive Prototype",
+    "Branding",
+    "Website App Design",
+    "Social Media Design / Management",
+    "Motion Design",
   ];
 
-  const budgetTiers = ["< $10k", "$10k - $25k", "$25k - $50k", "$50k+"];
   const timelineTiers = ["< 1 Month", "1 - 2 Months", "2 - 4 Months", "Flexible"];
 
   useEffect(() => {
@@ -60,6 +56,17 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = `New project inquiry from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Services: ${projectTypes.join(", ")}`,
+      `Timeline: ${timeline}`,
+      "",
+      "Project details:",
+      description,
+    ].join("\n");
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     confetti({
       particleCount: 100,
@@ -182,35 +189,6 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
                     </button>
                   );
                 })}
-              </div>
-            </div>
-
-            {/* Budget Tiers */}
-            <div style={{ marginBottom: "24px" }}>
-              <label style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, marginBottom: "8px" }}>
-                Estimated Budget
-              </label>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
-                {budgetTiers.map((tier) => (
-                  <button
-                    key={tier}
-                    type="button"
-                    onClick={() => setBudget(tier)}
-                    style={{
-                      padding: "10px",
-                      borderRadius: "12px",
-                      fontSize: "0.85rem",
-                      fontWeight: 600,
-                      cursor: "pointer",
-                      border: budget === tier ? "1.5px solid var(--accent-blue-deep)" : "1px solid var(--border-subtle)",
-                      background: budget === tier ? "rgba(37, 99, 235, 0.08)" : "#FFFFFF",
-                      color: budget === tier ? "var(--accent-blue-deep)" : "var(--text-secondary)",
-                      textAlign: "center",
-                    }}
-                  >
-                    {tier}
-                  </button>
-                ))}
               </div>
             </div>
 
@@ -350,7 +328,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
             </h3>
 
             <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.6, maxWidth: "440px", margin: "0 auto 28px" }}>
-              Thanks {name || "there"}! I&apos;ve received your project details for <strong>{projectTypes.join(", ")}</strong> with a budget of <strong>{budget}</strong>. I will review and reply to <strong>{email}</strong> within 24 hours.
+              Thanks {name || "there"}! Your email app should now be open with your project details for <strong>{projectTypes.join(", ")}</strong> ready to go. Press send there and I will reply to <strong>{email}</strong> within 24 hours. Nothing opened? Email <strong>{profile.email}</strong> directly.
             </p>
 
             <button onClick={handleClose} className="btn-secondary" style={{ minWidth: "160px" }}>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Graphics Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .category-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        .category-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .templates-list {
+            list-style: none;
+            padding: 0;
+        }
+        .templates-list li {
+            padding: 8px 0;
+            font-size: 13px;
+            color: #555;
+        }
+        .templates-list li:before {
+            content: "→ ";
+            color: #0A66C2;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .specs-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+        .specs-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .spec-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0A66C2;
+        }
+        .spec-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0A66C2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .spec-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+        .usage-guide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .usage-guide h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .usage-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .step-number {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .step-desc {
+            font-size: 13px;
+            opacity: 0.95;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Media Design Templates</h1>
+            <p class="subtitle">Professionally designed templates aligned with your 4 core service categories</p>
+        </header>
+
+        <div class="categories">
+            <div class="category-card">
+                <div class="icon">✨</div>
+                <div class="category-title">Branding</div>
+                <div class="category-desc">Logo systems, brand identities, and visual guidelines</div>
+                <ul class="templates-list">
+                    <li>Logo showcase posts</li>
+                    <li>Brand story narratives</li>
+                    <li>Identity guidelines</li>
+                    <li>Success case studies</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">📱</div>
+                <div class="category-title">Social Media Design</div>
+                <div class="category-desc">Engagement-optimized posts and campaign assets</div>
+                <ul class="templates-list">
+                    <li>Carousel post templates</li>
+                    <li>Instagram Reels graphics</li>
+                    <li>Story templates</li>
+                    <li>Engagement prompts</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">💻</div>
+                <div class="category-title">Website & App Design</div>
+                <div class="category-desc">UI/UX portfolio and design process content</div>
+                <ul class="templates-list">
+                    <li>Interface showcase posts</li>
+                    <li>Design process breakdowns</li>
+                    <li>Mobile mockup displays</li>
+                    <li>UX insights & tips</li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <div class="icon">🎬</div>
+                <div class="category-title">Motion Design</div>
+                <div class="category-desc">Animated content and interactive experiences</div>
+                <ul class="templates-list">
+                    <li>Animation showcases</li>
+                    <li>Video post templates</li>
+                    <li>Micro-animation demos</li>
+                    <li>Behind-the-scenes process</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="specs-section">
+            <h2>📐 Platform Specifications</h2>
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Instagram Post</div>
+                    <div class="spec-value">1080 × 1080px</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Instagram Story</div>
+                    <div class="spec-value">1080 × 1920px</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">LinkedIn Post</div>
+                    <div class="spec-value">1200 × 627px</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Twitter/X Post</div>
+                    <div class="spec-value">1024 × 512px</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Instagram Carousel</div>
+                    <div class="spec-value">1080 × 1350px</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Pinterest Pin</div>
+                    <div class="spec-value">1000 × 1500px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-guide">
+            <h2>🚀 How to Use These Templates</h2>
+            <div class="usage-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Open Template</div>
+                    <div class="step-desc">Choose the template that matches your content type and platform</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Customize</div>
+                    <div class="step-desc">Edit text, colors, and imagery to match your brand</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Export</div>
+                    <div class="step-desc">Save as PNG/JPG at recommended resolution</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Post</div>
+                    <div class="step-desc">Upload directly to your social media platforms</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="specs-section">
+            <h2>📁 Available Template Files</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <p style="margin-bottom: 15px;"><strong>Instagram Posts (1080 × 1080px):</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li><code>instagram-branding.html</code> - Branding category</li>
+                    <li><code>instagram-social-media.html</code> - Social media design category</li>
+                    <li><code>instagram-app-design.html</code> - Website & app design category</li>
+                    <li><code>instagram-motion.html</code> - Motion design category</li>
+                </ul>
+                <p style="margin-bottom: 15px;"><strong>LinkedIn Posts (1200 × 627px):</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li><code>linkedin-master.html</code> - Professional business posts</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="specs-section">
+            <h2>💡 Content Ideas for Each Category</h2>
+            <div style="margin-top: 20px;">
+                <h3 style="margin-top: 20px; color: #667eea;">Branding</h3>
+                <p>Share logo evolution stories, brand psychology insights, color theory posts, identity system breakdowns, client success stories</p>
+                
+                <h3 style="margin-top: 20px; color: #667eea;">Social Media Design</h3>
+                <p>Post carousel tutorials, trending template releases, engagement tips, audience interaction prompts, design trends analysis</p>
+                
+                <h3 style="margin-top: 20px; color: #667eea;">Website & App Design</h3>
+                <p>Share UI case studies, design system showcases, responsive design tips, UX best practices, before/after interface designs</p>
+                
+                <h3 style="margin-top: 20px; color: #667eea;">Motion Design</h3>
+                <p>Post animation clips, motion design tutorials, behind-the-scenes process videos, tool recommendations, animation principles</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Social Media Design Templates • All files are customizable and ready to use</p>
+        <p style="margin-top: 10px;">For support or custom templates, reach out to your design team</p>
+    </footer>
+</body>
+</html>

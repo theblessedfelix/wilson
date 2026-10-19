@@ -1,0 +1,539 @@
+<!-- 
+   EXAMPLE: How to customize and use Instagram templates
+   This file demonstrates the process for each template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Template Customization Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        .instruction-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .instruction-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 2rem;
+        }
+        .steps {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+        }
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+        .example {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .template-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .template-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .template-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .template-card code {
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .pros {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .cons {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .feature-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid #e0d7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+        tr:hover {
+            background: #f9f9f9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px 10px 0;
+        }
+        .btn:hover {
+            background: #764ba2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            color: #999;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Social Media Template Customization</h1>
+            <p class="subtitle">Step-by-step guide to customize and export your social media graphics</p>
+        </header>
+
+        <!-- BRANDING TEMPLATE -->
+        <div class="instruction-section">
+            <h2><span class="icon">✨</span> Branding Template Customization</h2>
+            
+            <p><strong>File:</strong> instagram-branding.html</p>
+            <p><strong>Size:</strong> 1080 × 1080px</p>
+            <p><strong>Theme:</strong> Purple gradient</p>
+            
+            <h3 style="margin-top: 25px; color: #333;">How to Customize:</h3>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Open the file in a browser:</strong>
+                    <div class="code-block">file:///C:/Users/Benjamin/Wilson/public/social-media-designs/instagram-branding.html</div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Open DevTools (F12) and go to Elements</strong>
+                    <p style="margin-top: 10px;">Find the text elements you want to change</p>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Edit the text:</strong>
+                    <div class="code-block">
+&lt;div class="main-text"&gt;YOUR CUSTOM TEXT HERE&lt;/div&gt;
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Change colors (optional):</strong>
+                    <div class="code-block">
+background: linear-gradient(135deg, #YOUR_COLOR1 0%, #YOUR_COLOR2 100%);
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Export as image:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Right-click on canvas → Take screenshot</li>
+                        <li>OR: Ctrl+P → Save as PDF → Convert to PNG</li>
+                        <li>OR: Use browser extension (Awesome Screenshot)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #333;">📝 Content Ideas for Branding Posts:</h3>
+            <ul style="margin-left: 20px;">
+                <li>✨ "Meet our latest brand identity: [Project Name]"</li>
+                <li>✨ "Logo design process: From concept to completion"</li>
+                <li>✨ "What makes great branding? [Design principle]"</li>
+                <li>✨ "Case study: How we transformed [Client] brand"</li>
+                <li>✨ "Behind the scenes: Design system creation"</li>
+            </ul>
+
+            <div class="example">
+                <strong>Example Post:</strong>
+                <p style="margin-top: 10px;">
+                    "🎨 Introducing VOLT — A high-octane electric mobility brand built for modern energy.<br/>
+                    Neon. Bold. Unforgettable. <br/>
+                    What would your brand look like? Let's talk. 💬"
+                </p>
+            </div>
+        </div>
+
+        <!-- SOCIAL MEDIA TEMPLATE -->
+        <div class="instruction-section">
+            <h2><span class="icon">📱</span> Social Media Design Template Customization</h2>
+            
+            <p><strong>File:</strong> instagram-social-media.html</p>
+            <p><strong>Size:</strong> 1080 × 1080px</p>
+            <p><strong>Theme:</strong> Pink-Red gradient with diagonal pattern</p>
+            
+            <h3 style="margin-top: 25px; color: #333;">Quick Customization:</h3>
+            <div class="feature-box">
+                <strong>Text to Edit:</strong>
+                <div class="code-block">
+&lt;div class="tagline"&gt;SOCIAL MEDIA DESIGN&lt;/div&gt;
+&lt;div class="main-text"&gt;SCROLL&lt;br&gt;STOP&lt;br&gt;CONVERT&lt;/div&gt;
+&lt;div class="description"&gt;Your custom message&lt;/div&gt;
+                </div>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #333;">📝 Content Ideas for Social Media Posts:</h3>
+            <ul style="margin-left: 20px;">
+                <li>📱 "3 colors that stop the scroll [design tip]"</li>
+                <li>📱 "Why your brand colors matter"</li>
+                <li>📱 "Trending Instagram design [trend analysis]"</li>
+                <li>📱 "[X]% more engagement with this design tip"</li>
+                <li>📱 "New carousel template just dropped 🎨"</li>
+            </ul>
+
+            <div class="example">
+                <strong>Example Post:</strong>
+                <p style="margin-top: 10px;">
+                    "Your thumbnail is your first impression.<br/>
+                    3 seconds to stop the scroll.<br/>
+                    Here's how we do it every single time. 🎯<br/>
+                    Link in bio for our design formula 👆"
+                </p>
+            </div>
+        </div>
+
+        <!-- APP DESIGN TEMPLATE -->
+        <div class="instruction-section">
+            <h2><span class="icon">💻</span> Website & App Design Template Customization</h2>
+            
+            <p><strong>File:</strong> instagram-app-design.html</p>
+            <p><strong>Size:</strong> 1080 × 1080px</p>
+            <p><strong>Theme:</strong> Dark blue with grid pattern and glowing accents</p>
+
+            <h3 style="margin-top: 25px; color: #333;">📝 Content Ideas for App/Web Posts:</h3>
+            <ul style="margin-left: 20px;">
+                <li>💻 "UI Design Breakdown: [App Name] case study"</li>
+                <li>💻 "5 UX principles every app needs"</li>
+                <li>💻 "How we designed mobile banking for [number]+ users"</li>
+                <li>💻 "Design system: Building at scale"</li>
+                <li>💻 "Before & After: Complete app redesign 🚀"</li>
+            </ul>
+
+            <div class="example">
+                <strong>Example Post:</strong>
+                <p style="margin-top: 10px;">
+                    "Redesigned AgroLink's marketplace to make buying fresh produce frictionless.<br/>
+                    ✅ +54% farmer profits<br/>
+                    ✅ 4.9★ user rating<br/>
+                    ✅ 40k+ active buyers<br/>
+                    Design that matters. 🌱"
+                </p>
+            </div>
+        </div>
+
+        <!-- MOTION TEMPLATE -->
+        <div class="instruction-section">
+            <h2><span class="icon">🎬</span> Motion Design Template Customization</h2>
+            
+            <p><strong>File:</strong> instagram-motion.html</p>
+            <p><strong>Size:</strong> 1080 × 1080px</p>
+            <p><strong>Theme:</strong> Vibrant rainbow gradient with floating shapes</p>
+
+            <h3 style="margin-top: 25px; color: #333;">📝 Content Ideas for Motion Posts:</h3>
+            <ul style="margin-left: 20px;">
+                <li>🎬 "Animation that converts [micro-interaction example]"</li>
+                <li>🎬 "Behind the scenes: Creating motion graphics"</li>
+                <li>🎬 "Motion design principles [educational post]"</li>
+                <li>🎬 "Video reel: Our latest animation work"</li>
+                <li>🎬 "Why animation matters in UX [design insight]"</li>
+            </ul>
+
+            <div class="example">
+                <strong>Example Post:</strong>
+                <p style="margin-top: 10px;">
+                    "A micro-interaction nobody asked for but everyone loves. 🎨<br/>
+                    Motion = Emotion = Engagement<br/>
+                    Every frame matters. Every pixel tells a story.<br/>
+                    Swipe for our latest work ➡️"
+                </p>
+            </div>
+        </div>
+
+        <!-- LINKEDIN TEMPLATE -->
+        <div class="instruction-section">
+            <h2><span class="icon">💼</span> LinkedIn Template Customization</h2>
+            
+            <p><strong>File:</strong> linkedin-master.html</p>
+            <p><strong>Size:</strong> 1200 × 627px</p>
+            <p><strong>Theme:</strong> Professional blue and white</p>
+
+            <h3 style="margin-top: 25px; color: #333;">📝 Content Ideas for LinkedIn Posts:</h3>
+            <ul style="margin-left: 20px;">
+                <li>💼 "The ROI of good design [business insight]"</li>
+                <li>💼 "Building brands that drive business results"</li>
+                <li>💼 "Design strategy in [industry] [thought leadership]"</li>
+                <li>💼 "How design saved us [million] in revenue"</li>
+                <li>💼 "Working with [brand name]: A case study"</li>
+            </ul>
+
+            <div class="example">
+                <strong>Example Post:</strong>
+                <p style="margin-top: 10px;">
+                    "🎨 Design isn't decoration. It's strategy.<br/><br/>
+                    A well-designed interface can increase conversion by 20-50%. A strong brand identity can increase perceived value by 30%+.<br/><br/>
+                    That's not art. That's business. And that's what we do.<br/><br/>
+                    #Design #Brand #UX #BusinessStrategy"
+                </p>
+            </div>
+        </div>
+
+        <!-- EXPORT GUIDE -->
+        <div class="instruction-section">
+            <h2><span class="icon">💾</span> How to Export Templates as Images</h2>
+            
+            <h3 style="margin-top: 25px; color: #333;">Method 1: Screenshot (Easiest)</h3>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span> Open template in Chrome
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span> Right-click on the design → "Inspect"
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span> Click device toolbar (top-left)
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span> Set dimensions to 1080×1080 (or 1200×627 for LinkedIn)
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span> Press F12 to close DevTools
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span> Take screenshot (Shift+Print Screen) or use Snagit/Greenshot
+                </div>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #333;">Method 2: Print to PDF</h3>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1</span> Open template in browser
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span> Press Ctrl+P to open print dialog
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span> Select "Save as PDF"
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span> Use online tool to convert PDF → PNG
+                </div>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #333;">Method 3: Browser Extension</h3>
+            <div class="pros">
+                <strong>✅ Recommended tools:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Awesome Screenshot (Chrome/Firefox)</li>
+                    <li>Nimbus Screenshot (Chrome)</li>
+                    <li>FireShot (Chrome/Firefox)</li>
+                </ul>
+            </div>
+
+            <div class="success">
+                <strong>✅ Recommended export settings:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Format: PNG (for best quality)</li>
+                    <li>Resolution: 1080×1080px (Instagram) or 1200×627px (LinkedIn)</li>
+                    <li>Quality: Maximum (100%)</li>
+                    <li>File name: category-date-variant.png</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT CALENDAR -->
+        <div class="instruction-section">
+            <h2><span class="icon">📅</span> Sample 4-Week Content Calendar</h2>
+            
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Monday (Post #1)</th>
+                    <th>Wednesday (Post #2)</th>
+                    <th>Friday (Post #3)</th>
+                </tr>
+                <tr>
+                    <td><strong>Week 1</strong></td>
+                    <td>🎨 Branding<br/>Logo showcase</td>
+                    <td>📱 Social Media<br/>Template release</td>
+                    <td>💻 App Design<br/>Case study</td>
+                </tr>
+                <tr>
+                    <td><strong>Week 2</strong></td>
+                    <td>🎬 Motion<br/>Animation demo</td>
+                    <td>🎨 Branding<br/>Design process</td>
+                    <td>📱 Social Media<br/>Engagement tip</td>
+                </tr>
+                <tr>
+                    <td><strong>Week 3</strong></td>
+                    <td>💻 App Design<br/>UX principle</td>
+                    <td>🎬 Motion<br/>Tutorial</td>
+                    <td>🎨 Branding<br/>Brand psychology</td>
+                </tr>
+                <tr>
+                    <td><strong>Week 4</strong></td>
+                    <td>📱 Social Media<br/>Trend analysis</td>
+                    <td>💻 App Design<br/>Success metric</td>
+                    <td>🎬 Motion<br/>Tool review</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- FINAL TIPS -->
+        <div class="instruction-section">
+            <h2><span class="icon">💡</span> Pro Tips for Maximum Engagement</h2>
+            
+            <div class="feature-box" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(254, 202, 87, 0.1) 100%); border-color: #ffe082;">
+                <h3 style="color: #333;">✅ Do This:</h3>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Post consistently (3-5 times per week)</li>
+                    <li>Reply to comments within 1 hour</li>
+                    <li>Use all 30 Instagram hashtags</li>
+                    <li>Post Stories daily for algorithm boost</li>
+                    <li>Include strong CTAs ("Link in bio", "DM us", etc.)</li>
+                    <li>Tag relevant people/brands</li>
+                    <li>Test different post times</li>
+                </ul>
+            </div>
+
+            <div class="feature-box" style="background: linear-gradient(135deg, rgba(244, 67, 54, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%); border-color: #ef5350;">
+                <h3 style="color: #333;">❌ Avoid This:</h3>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Posting the same content repeatedly</li>
+                    <li>Ignoring comments/DMs</li>
+                    <li>Generic, over-used hashtags</li>
+                    <li>Posting only promotional content</li>
+                    <li>Inconsistent branding</li>
+                    <li>Poor quality images</li>
+                    <li>Weak or no call-to-action</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>All social media templates are ready to customize and deploy immediately.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">For questions, review the detailed guides in <code>public/social-media-designs/</code></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -15,9 +15,10 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
 
   const categories = [
     "All",
-    "Brand & Logo Design",
-    "Mobile App UI & UX",
-    "Graphic & UI Design",
+    "Branding",
+    "Website App Design",
+    "Social Media Design / Management",
+    "Motion Design",
   ];
 
   const filteredProjects =
@@ -124,7 +125,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
         >
           {filteredProjects.map((project) => {
             const shortTitle = project.shortTitle || project.title.split(" ")[0];
-            const duration = project.duration || "4 Weeks";
+            const duration = project.id === "ednon-social-media" ? "" : project.duration || "4 Weeks";
 
             return (
               <div
@@ -158,6 +159,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                     alignItems: "center",
                     justifyContent: "center",
                     padding: "32px",
+                    pointerEvents: "none",
                   }}
                 >
                   <Image
@@ -188,6 +190,7 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                     alignItems: "center",
                     gap: "10px",
                     border: "1px solid rgba(0, 0, 0, 0.04)",
+                    pointerEvents: "none",
                   }}
                 >
                   <span
@@ -200,16 +203,20 @@ export const SelectedWorkSection: React.FC<SelectedWorkSectionProps> = ({
                   >
                     {shortTitle}
                   </span>
-                  <span style={{ color: "#94A3B8", fontWeight: 400 }}>/</span>
-                  <span
-                    style={{
-                      fontSize: "0.92rem",
-                      fontWeight: 500,
-                      color: "#586071",
-                    }}
-                  >
-                    {duration}
-                  </span>
+                  {duration && (
+                    <>
+                      <span style={{ color: "#94A3B8", fontWeight: 400 }}>/</span>
+                      <span
+                        style={{
+                          fontSize: "0.92rem",
+                          fontWeight: 500,
+                          color: "#586071",
+                        }}
+                      >
+                        {duration}
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
             );

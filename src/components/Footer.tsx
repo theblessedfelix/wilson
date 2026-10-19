@@ -185,36 +185,6 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
       </div>
-
-      {/* Made in Framer / Next.js badge fixed at bottom right like in reference */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "16px",
-          right: "16px",
-          zIndex: 80,
-        }}
-      >
-        <div
-          className="glass-pill"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "7px",
-            padding: "6px 12px",
-            fontSize: "0.76rem",
-            fontWeight: 700,
-            color: "#12151B",
-            boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-          }}
-        >
-          {/* Framer-like logo icon */}
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M2 2H10V6H6V10L2 6V2Z" fill="#12151B" />
-          </svg>
-          <span>Made in Next.js</span>
-        </div>
-      </div>
     </footer>
   );
 };

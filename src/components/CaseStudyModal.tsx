@@ -231,6 +231,53 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
           </div>
 
+          {project.gallery && project.gallery.length > 0 && (
+            <div style={{ marginBottom: "36px" }}>
+              <h3
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.1rem",
+                  fontWeight: 700,
+                  color: "var(--text-primary)",
+                  marginBottom: "16px",
+                }}
+              >
+                All Designs ({project.gallery.length})
+              </h3>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+                  gap: "14px",
+                }}
+              >
+                {project.gallery.map((src, i) => (
+                  <a
+                    key={src}
+                    href={src}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: "block",
+                      borderRadius: "14px",
+                      overflow: "hidden",
+                      background: "#E4E6EB",
+                      border: "1px solid var(--border-subtle)",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={src}
+                      alt={`${project.title} design ${i + 1}`}
+                      loading="lazy"
+                      style={{ width: "100%", height: "auto", display: "block" }}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Key Features Checklist */}
           <div style={{ marginBottom: "36px" }}>
             <h3
