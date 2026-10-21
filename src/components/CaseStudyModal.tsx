@@ -377,7 +377,9 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   className="btn-secondary"
                   style={{ gap: "6px" }}
                 >
-                  <span>Live Preview</span>
+                  <span>
+                    {project.category === "Motion Design" ? "Watch Motion Reel" : "Live Preview"}
+                  </span>
                   <ExternalLink size={15} />
                 </a>
               )}
